@@ -28,11 +28,11 @@ describe('My Little Hero', function () { //define suite title by passing a strin
             expect(label).toEqual(true);
         });
 
-        it('TC-005 Label for story', function () {
-            const label = $$('.ant-form-item-required')[3].isDisplayed();
-            expect(label).toEqual(true);
-        });
-
     });
 
 });
+
+//it('TC-005 Label for story', function () {
+//             const label = $$('.ant-form-item-required')[3].isDisplayed();
+//             expect(label).toEqual(true);
+//         });
