@@ -16,5 +16,17 @@ describe('Image section', function () {
             const text = $$(sel.imageSection)[4].getAttribute('textContent');
             expect(text).toEqual(exp.labelImage);
         });
+
+        it('TC-064 File input field is present', function () {
+            const input = $(sel.fileInput).isDisplayed();
+            expect(input).toEqual(true);
+        });
+
+        it('TC-064.1 File input field has square shape', function () {
+            const field = $(sel.fileInput);
+            const width = field.getSize('width')
+            const height = field.getSize('height')
+            expect(width === height).toEqual(true);
+        });
     });
 });
