@@ -10,7 +10,7 @@ describe('Checking main functionality', function () {
             const inputGender = $$(sel.gender)[1].click(); // [1] - she
             const inputAge = $(sel.age).addValue(123);
             const clickStory = $(sel.storyClick).click();
-            const inputStory = $$(sel.storyType)[6].getAttribute('title')
+            const inputStory = $$(sel.storyType)[6].click();
             const clickCreate = $(sel.create).isEnabled();
             browser.pause(3000); // 3 sec pause
             expect(clickCreate).toEqual(true);
