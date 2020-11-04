@@ -1,3 +1,6 @@
+// ADD "My Little Hero" title is present and spelled correct
+// ADD "Let's create your own HERO! It's super easy with our application!" second title and spelled correct
+
 const sel = require ('../../data/selectors.json');
 const exp = require ('../../data/expected.json'); // ../ -> one level(directory) up
 
@@ -28,7 +31,7 @@ describe('My Little Hero', function () {
         });
     });
     describe('Labels are correct', function () {
-        it('TC-006 Label for name = 1. What is your HERO\'s name?', function () {
+        it('TC-006 Label for name = 1. What is your Hero\'s name?', function () {
             const text = $$(sel.label)[0].getAttribute('title');
             expect(text).toEqual(exp.labelName);
         });
