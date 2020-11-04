@@ -8,5 +8,6 @@
   "storyClick": ".ant-select-show-arrow",
   "storyPlaceholder": ".ant-select-selection-placeholder",
   "storyType": ".ant-select-item-option",
-  "tryAgain": ".btn-primary"
+  "tryAgain": ".btn-primary",
+  "imageSection": ".ant-form-item-label"
 }
