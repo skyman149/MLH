@@ -1,5 +1,5 @@
 {
-  "label": ".ant-form-item-required",
+  "label": ".ant-form-item-label",
   "name": "#name",
   "gender": ".ant-radio",
   "age": "#age",
@@ -9,6 +9,6 @@
   "storyPlaceholder": ".ant-select-selection-placeholder",
   "storyType": ".ant-select-item-option",
   "tryAgain": ".btn-primary",
-  "imageSection": ".ant-form-item-label",
-  "fileInput": ".ant-upload"
+  "fileInput": ".ant-upload",
+  "fileInputPlaceholder": "//span[@class='ant-upload']/div/div"
 }

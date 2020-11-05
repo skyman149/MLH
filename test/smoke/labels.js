@@ -32,19 +32,19 @@ describe('My Little Hero', function () {
     });
     describe('Labels are correct', function () {
         it('TC-006 Label for name = 1. What is your Hero\'s name?', function () {
-            const text = $$(sel.label)[0].getAttribute('title');
+            const text = $$(sel.label)[0].getText('title');
             expect(text).toEqual(exp.labelName);
         });
         it('TC-007 Label for gender = 2. Please choose a gender.', function () {
-            const text = $$(sel.label)[1].getAttribute('title');
+            const text = $$(sel.label)[1].getText('title');
             expect(text).toEqual(exp.labelGender);
         });
         it('TC-008 Label for age = 3. How old is your Hero?', function () {
-            const text = $$(sel.label)[2].getAttribute('title');
+            const text = $$(sel.label)[2].getText('title');
             expect(text).toEqual(exp.labelAge);
         });
         it('TC-009 Label for story = 4. What type of story would you like to read?', function () {
-            const text = $$(sel.label)[3].getAttribute('title');
+            const text = $$(sel.label)[3].getText('title');
             expect(text).toEqual(exp.labelStory);
         });
     });
