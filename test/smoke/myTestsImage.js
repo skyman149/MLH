@@ -30,7 +30,7 @@ describe('Image section', function () {
         });
 
         it('TC-065 Placeholder for file input field = drag and drop your image here or browse', function () {
-            const text = $(sel.fileInputPlaceholder).getText();
+            const text = $(sel.fileInput).getText();
             expect(text).toEqual(exp.fileInputPlaceholder);
         });
     });
