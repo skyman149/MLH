@@ -2,6 +2,9 @@ const sel = require ('../../data/selectors.json');
 const exp = require ('../../data/expected.json'); // ../ -> one level(directory) up
 const data = require('../../data/testData.json');
 const inputValues4 = require('../../helpers/inputValues4.js');
+const inputValues5Create = require('../../helpers/inputValues5Create.js');
+const inputValues5CreatePNG = require('../../helpers/inputValues5CreatePNG.js');
+const path = require('path');
 
 describe('Image section', function () {
 
@@ -32,6 +35,36 @@ describe('Image section', function () {
         it('TC-065 Placeholder for file input field = drag and drop your image here or browse', function () {
             const text = $(sel.fileInput).getText();
             expect(text).toEqual(exp.fileInputPlaceholder);
+        });
+
+        it('TC-068 Verify that image upload is optional', function () {
+            browser.url('https://qa-apps.netlify.app/app_my_hero');
+            inputValues4(data.name, data.gender.she, data.age, data.storyType);
+            const clickCreate = $(sel.create).isEnabled();
+            expect(clickCreate).toEqual(true);
+        });
+
+        it('TC-069 Verify that user can upload an JPEG(JPG) image', function () {
+            browser.url('');
+            inputValues5Create(data.name, data.gender.she, data.age, data.storyType);
+            const img = $(sel.uploadedImage).isDisplayed();
+            expect(img).toEqual(true); // true
+        });
+
+        it('TC-070 Verify that user can upload an PNG image', function () {
+            browser.url('');
+            inputValues5CreatePNG(data.name, data.gender.she, data.age, data.storyType);
+            const img = $(sel.uploadedImage).isDisplayed();
+            expect(img).toEqual(true); // true
+        });
+
+        it('TC-071 Verify that uploaded image is shown with max side = 500px', function () {
+            browser.url('');
+            inputValues5Create(data.name, data.gender.she, data.age, data.storyType);
+            const img = $(sel.uploadedImage);
+            const width = img.getSize('width')
+            expect(width === 500).toEqual(true); // false
+            // expect(width === 200).toEqual(true); // true
         });
     });
 });
